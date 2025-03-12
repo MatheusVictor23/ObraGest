@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ObraGest:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/ObraGest_war</output-path>
+    <root id="archive" name="ObraGest_war.war">
+      <element id="artifact" artifact-name="ObraGest:war exploded" />
+    </root>
+  </artifact>
+</component>
