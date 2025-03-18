@@ -33,7 +33,11 @@ body{
 .header_nav_list > li {
     list-style: none;
     margin-right: 95px;
+}
+
+.header_nav_list > li > a {
     font-family: Inter, sans-serif;
     font-size: 28px;
     font-weight: bold;
+    color: #FFFFFF;
 }

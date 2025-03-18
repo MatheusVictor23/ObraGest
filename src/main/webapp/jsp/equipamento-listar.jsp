@@ -10,6 +10,7 @@
 <%@ page import="model.Equipamento"%>
 <%@ page import="java.util.List" %>
 
+<!DOCTYPE html>
 <html>
 <head>
     <title>Lista de equipamentos</title>
@@ -28,25 +29,48 @@
         </ul>
     </div>
 </header>
-<h1 class="text-center mt-4">Lista de equipamentos</h1>
+<div class="page_body">
+<h1 class="page_title">Lista de equipamentos</h1>
 
 <%
     EquipamentosDao equipamentosDao = new EquipamentosDao();
 
     List<Equipamento> equipamentos = equipamentosDao.listar();
+
+    String id = request.getParameter("id");
+    String mensagem = "";
+
+    String excluir = request.getParameter("excluir");
+    if (excluir != null) {
+        try{
+        equipamentosDao.excluir(Long.parseLong(id));
+        mensagem = "Equipamento excluído com sucesso!";
+
 %>
-<table border="1">
-    <th>ID</th>
-    <th>Tombo</th>
-    <th>Equipamento</th>
-    <th>Marca</th>
-    <th>Modelo</th>
+    <script>
+        setTimeout(() => {
+            location.href="../index.jsp"
+        },3000);
+    </script>
+<%
+        } catch (Exception e) {
+        mensagem = "Erro ao excluir o equipamento.";
+        }
+        }
+%>
+
+<table class="table table-striped">
+    <th scope="col">ID</th>
+    <th scope="col">Tombo</th>
+    <th scope="col">Equipamento</th>
+    <th scope="col">Marca</th>
+    <th scope="col" colspan="3">Modelo</th>
 
     <% for(Equipamento equipamento : equipamentos){ %>
     <tr> <%-- Cria uma linha para cada pessoa --%>
-        <td>
+        <th scope="row">
             <a href="equipamento-consultar.jsp?id=<%=equipamento.getId()%>"><%=(equipamento.getId())%></a>
-        </td>
+        </th>
         <td>
             <%=(equipamento.getN_tombo())%>
         </td>
@@ -59,11 +83,25 @@
         <td>
             <%=(equipamento.getModelo())%>
         </td>
+        <td style="display: flex; flex-direction: row">
+            <a href="equipamento-editar.jsp?id=<%=equipamento.getId()%>" style="margin-right: 10px"><img src="../assets/imgs/pencil.png"></a>
+            <form method="post">
+                <input type="hidden" name="id" value="<%=equipamento.getId()%>">
+                <button type="submit" name="excluir" value="true" style="background-color: #FFFFFF; border-style: none"><img src="../assets/imgs/trash.png"></button>
+            </form>
+        </td>
     </tr>
     <% } %>
 </table>
 <br>
-<button onclick="location.href='equipamento-cadastrar.jsp'" class="btn btn-primary">Adicionar novo Equipamento</button>
-
+<button onclick="location.href='equipamento-cadastrar.jsp'" class="page_btn">Novo equipamento</button>
+</div>
+<%
+    if (!mensagem.isEmpty()) {
+%>
+<p><strong><%= mensagem %></strong></p>
+<%
+    }
+%>
 </body>
 </html>

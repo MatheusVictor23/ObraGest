@@ -9,6 +9,7 @@
 <%@ page import="model.Equipamento"%>
 <%@ page import="dao.EquipamentosDao" %>
 
+<!DOCTYPE html>
 <html>
 <head>
     <title>Consultar Equipamento</title>
@@ -64,8 +65,8 @@
 <p><strong>Modelo:</strong> <%= equipamento.getModelo() %></p>
 
 <form method="post">
-    <button type="button" onclick="location.href='equipamento-editar.jsp?id=<%= equipamento.getId() %>'">Editar Equipamento</button>
-    <button type="submit" name="excluir" value="true">Excluir Equipamento</button>
+    <button type="button" class="page_btn" onclick="location.href='equipamento-editar.jsp?id=<%= equipamento.getId() %>'">Editar Equipamento</button>
+    <button type="submit" class="page_btn" name="excluir" value="true">Excluir Equipamento</button>
 </form>
 <%
 }
@@ -79,8 +80,5 @@
 <%
     }
 %>
-
-<button onclick="location.href='equipamento-listar.jsp'">Voltar</button>
-
 </body>
 </html>

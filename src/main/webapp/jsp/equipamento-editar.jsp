@@ -9,6 +9,7 @@
 <%@ page import="dao.EquipamentosDao" %>
 <%@ page import="model.Equipamento" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Editar Equipamento</title>
@@ -27,6 +28,8 @@
         </ul>
     </div>
 </header>
+<div class="page_body">
+<h1 class="page_title">Editar equipamento</h1>
 <%
     EquipamentosDao equipamentoDao = new EquipamentosDao();
     String id = request.getParameter("id");
@@ -61,22 +64,24 @@
 
     if (equipamento01 != null && sucesso == false) {
 %>
-<form action="equipamento-editar.jsp" method="post">
-    <input type="hidden" name="id" value="<%=equipamento01.getId()%>">
-    <label for="n_tombo">Tombo do equipamento:</label>
-    <input type="text" id="n_tombo" name="n_tombo" value="<%=equipamento01.getN_tombo()%>" required>
+<form action="equipamento-cadastrar.jsp" method="post" class="page_form">
+    <label for="n_tombo"><img src="../assets/imgs/settings.png"></label>
+    <input type="text" placeholder="Tombo" id="n_tombo" class="form_input" name="n_tombo" value="<%=equipamento01.getN_tombo()%>" required>
     <br>
-    <label for="equipamento">Equipamento:</label>
-    <input type="text" id="equipamento" name="equipamento" value="<%=equipamento01.getEquipamento()%>" required>
+    <label for="equipamento"><img src="../assets/imgs/settings.png"></label>
+    <input type="text" placeholder="Equipamento" id="equipamento" class="form_input" name="equipamento" value="<%=equipamento01.getEquipamento()%>" required>
     <br>
-    <label for="marca">Marca:</label>
-    <input type="text" id="marca" name="marca" value="<%=equipamento01.getMarca()%>" required>
+    <label for="marca"><img src="../assets/imgs/settings.png"></label>
+    <input type="text" placeholder="Marca" id="marca" class="form_input" name="marca" value="<%=equipamento01.getMarca()%>" required>
     <br>
-    <label for="modelo">Modelo:</label>
-    <input type="text" id="modelo" name="modelo" value="<%=equipamento01.getModelo()%>" required>
-    <br><br>
-    <button type="submit" name="editar" value="editar">Editar</button>
-    <button type="reset">Resetar</button>
+    <label for="modelo"><img src="../assets/imgs/settings.png"></label>
+    <input type="text" placeholder="Modelo" id="modelo" class="form_input" name="modelo" value="<%=equipamento01.getModelo()%>" required>
+    <br>
+    <br>
+    <div class="page_form_buttons">
+        <button type="submit" name="editar" value="editar" class="page_btn">Editar</button>
+        <button type="reset" class="page_btn">Resetar</button>
+    </div>
 </form>
 <%
     }
@@ -89,6 +94,6 @@
     }
 %>
 <br>
-<button onclick="location.href='equipamento-listar.jsp'">Voltar</button>
+</div>
 </body>
 </html>
