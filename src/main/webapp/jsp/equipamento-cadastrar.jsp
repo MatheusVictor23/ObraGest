@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../assets/css/equipamento-cadastrar.css">
+    <link rel="stylesheet" href="../index.css">
 </head>
-<body>
+<body class="page_body">
 <header class="page_header">
     <div class="header_logo">
         <img src="../assets/imgs/obraGest-logo.png">
@@ -59,13 +60,15 @@
 <%
     if(cadastroConcluido) {
 %>
-<p><strong><%=mensagem%></strong></p>
-<br>
-<script>
-    setTimeout(() => {
-        location.href="../index.jsp"
-    }, 3000);
-</script>
+    <div class="alert alert-success" role="alert">
+        Equipamento cadastrado!
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "equipamento-listar.jsp";
+        },2000)
+    </script>
 <%
 } else {
 %>

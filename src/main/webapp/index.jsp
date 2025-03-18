@@ -4,9 +4,9 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <link rel="stylesheet" href="assets/css/index.css"/>
+    <link rel="stylesheet" href="index.css"/>
 </head>
-<body>
+<body id="home_body">
     <header class="page_header">
         <div class="header_logo">
             <img src="assets/imgs/obraGest-logo.png">

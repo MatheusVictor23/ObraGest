@@ -15,9 +15,10 @@
     <title>Consultar Equipamento</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/equipamento-consultar.css">
+    <link rel="stylesheet" href="../index.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
-<body>
+<body class="page_body">
 <header class="page_header">
     <div class="header_logo">
         <img src="../assets/imgs/obraGest-logo.png">
