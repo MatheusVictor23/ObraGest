@@ -1,0 +1,39 @@
+body{
+    background-image: url("../imgs/material-de-construcao.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 5px;
+    color: #FFFFFF;
+}
+
+.page_header {
+    height: 160px;
+    width: 100%;
+    background-color: rgba(173, 144, 144, 0.34);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo > img {
+    max-width: 300px;
+    max-height: 250px;
+}
+
+.header_nav_list {
+    display: flex;
+    flex-direction: row;
+}
+
+.header_nav_list > li {
+    list-style: none;
+    margin-right: 95px;
+    font-family: Inter, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+}
