@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar Equipamento</title>
+    <title>Editar Ferramenta</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../assets/css/equipamento-editar.css">
@@ -22,7 +22,7 @@
     </div>
 </header>
 <div class="page_body">
-    <h1 class="page_title">Editar equipamento</h1>
+    <h1 class="page_title">Editar ferramenta</h1>
     <%
         EquipamentosDao equipamentoDao = new EquipamentosDao();
         String id = request.getParameter("id");
@@ -40,7 +40,7 @@
                 sucesso = true;
     %>
     <div class="alert alert-success" role="alert">
-        Equipamento editado!
+        Ferramenta editada!
     </div>
 
     <script>
@@ -66,7 +66,7 @@
             } catch (Exception e) {
     %>
     <div class="alert alert-danger" role="alert">
-    Erro ao editar equipamento!
+    Erro ao editar ferramenta!
     </div>
     <script>
         setTimeout(() => {

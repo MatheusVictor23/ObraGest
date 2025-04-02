@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Adicionar novo Equipamento</title>
+    <title>Adicionar nova ferramenta</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../assets/css/equipamento-cadastrar.css">
@@ -30,7 +30,7 @@
     </div>
 </header>
 <div class="page_body">
-<h1 class="page_title">Cadastro de equipamento</h1>
+<h1 class="page_title">Cadastro de ferramenta</h1>
 <%
     String adicionar = request.getParameter("adicionar");
     String mensagem = "";
@@ -61,7 +61,7 @@
     if(cadastroConcluido) {
 %>
     <div class="alert alert-success" role="alert">
-        Equipamento cadastrado!
+        Ferramenta cadastrado!
     </div>
 
     <script>

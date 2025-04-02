@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de equipamentos</title>
+    <title>Lista de ferramentas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/equipamento-listar.css">
     <link rel="stylesheet" href="../index.css">
@@ -40,7 +40,7 @@
     </div>
 </header>
 <div class="page_body">
-    <h1 class="page_title">Lista de equipamentos</h1>
+    <h1 class="page_title">Lista de ferramentas</h1>
 
     <%
         EquipamentosDao equipamentosDao = new EquipamentosDao();
@@ -89,7 +89,7 @@
         <% for (Equipamento equipamento : equipamentos) { %>
         <tr>
             <th scope="row">
-                <a href="equipamento-consultar.jsp?id=<%=equipamento.getId()%>"><%=equipamento.getId()%></a>
+                <%=equipamento.getId()%>
             </th>
             <td><%=equipamento.getN_tombo()%></td>
             <td><%=equipamento.getEquipamento()%></td>
@@ -107,7 +107,7 @@
         <% } %>
     </table>
     <br>
-    <button onclick="location.href='equipamento-cadastrar.jsp'" id="button_new">Novo equipamento</button>
+    <button onclick="location.href='equipamento-cadastrar.jsp'" id="button_new">Nova ferramenta</button>
 </div>
 </body>
 </html>
